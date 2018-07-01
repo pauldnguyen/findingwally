@@ -1,0 +1,466 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load static %}
+
+{% block content %}
+
+    <br/>
+
+    <!-- Canvas to contain the body content -->
+
+    <div class="jumbotron">
+
+        <!-- Header -->
+
+        <h1 class="display-4" style="text-align: left;">
+            {% trans "Where's Wally?" %}
+        </h1>
+        <br/>
+        <br/>
+
+        <!-- Introduction -->
+
+        <p class="lead">
+            <img src="{% static 'img/Wally_full.jpg' %}" alt="Wally" style="float: right; max-height: 27.25em; max-width: calc(50% + 2rem); padding-left: 2rem;"/>
+            {% trans "Wally has gone out in search of adventure again! Perhaps you have heard of him from his famous series of books <i>Where's Wally?</i> full of his many pictures from various exotic times and places. As usual, he likes to hide somewhere at each location so that his friends can have fun looking for him." %}
+            <br/>
+            <br/>
+            {% trans "That search for him is now easier than ever before with this new tool that detects him using a powerful technique from machine learning: the artificial neural network. This system is made up of a collection of connected units called artificial neurons, which are reminiscent of neurons in a brain. These artificial neurons process the data, and transfer them to the next neurons until the data reaches an output node indicating a decision. To calibrate the connections between neurons, the network trains itself by taking appropriate data through the network, and adjusting the connections to reduce errors in the final predictions. After it learns Wally's different features from images with him and those without him, this model is able to detect his location in new images." %}
+            <br/>
+            <br/>
+            {% trans "Give it a try now: look through the collection of images below, and select one to start finding Wally! If you do not see any images, try opening the website in another browser." %}
+            <br/>
+            <br/>
+        </p>
+
+        <!-- Image carousel -->
+
+        <div id="carousel-main" class="carousel slide" data-ride="carousel">
+
+            <!-- Wrapper for slides -->
+
+            <div class="carousel-outer">
+                <div class="carousel-inner" role="listbox">
+                    {% for image in images %}
+                        {% if forloop.counter0 == 0 %}
+                            <div class="carousel-item active">
+                                <div class="carousel-item-frame">
+                                    <img src="{{ image }}" alt="{% trans 'If no images appear, try opening the website in another browser.' %}" style="color: white; text-align: center;" id="{{ image }}"/>
+                                </div>
+                            </div>
+                        {% elif forloop.counter0 > 0 %}
+                            <div class="carousel-item">
+                                <div class="carousel-item-frame">
+                                    <img src="{{ image }}" alt="{% trans 'If no images appear, try opening the website in another browser.' %}" style="color: white; text-align: center;" id="{{ image }}"/>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+
+                <!-- Controls -->
+
+                <a class="carousel-control-prev" href="#carousel-main" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#carousel-main" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+
+            </div>
+
+            <!-- Indicators -->
+
+            <ol class="carousel-indicators">
+                {% for image in images %}
+                    {% if forloop.counter0 == 0 %}
+                        <li data-target="#carousel-main" data-slide-to="{{ forloop.counter0 }}" class="active">
+                            <div class="carousel-indicators-border">
+                                <div class="carousel-indicators-frame">
+                                    <img src="{{ image }}" alt=""/>
+                                </div>
+                            </div>
+                        </li>
+                    {% elif forloop.counter0 > 0 %}
+                        <li data-target="#carousel-main" data-slide-to="{{ forloop.counter0 }}">
+                            <div class="carousel-indicators-border">
+                                <div class="carousel-indicators-frame">
+                                    <img src="{{ image }}" alt=""/>
+                                </div>
+                            </div>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ol>
+
+        </div>
+        <br/>
+        <br/>
+
+        <!-- Find Wally button -->
+
+        <div style="text-align: center;">
+            <button type="button" class="btn btn-secondary btn-lg" onclick="findWally()">
+                {% trans "FIND WALLY" %}
+                <i class="material-icons" style="vertical-align: middle;" data-toggle="tooltip-right" title="{% trans 'Find Wally in the image' %}">
+                    search
+                </i>
+            </button>
+        </div>
+        <br/>
+        <br/>
+
+        <!-- More explanations -->
+
+        <p class="lead">
+            {% trans "Once you have selected an image from the collection, click on the button above to find Wally. You can also add more images from the Internet by typing its address in the box below and clicking the button on the side. Afterwards, you can select that image just like any of the others in the collection to find Wally. Because of the restrictions of using a free account with the PythonAnywhere web-hosting service, you can only add certain external sources such as Twitter. You may find some good new images to try from Wally's Twitter below." %}
+            <br/>
+            <br/>
+        </p>
+
+        <!-- Form to submit image URLs to the collection -->
+
+        <form method="POST">
+            <div class="input-group input-group-lg">
+                {% csrf_token %}
+
+                <!-- Input field -->
+
+                <input type="text" class="form-control" style="border-radius: 0.25rem 0rem 0rem 0.25rem;" name="url_image" placeholder="{% trans 'Enter the web address of an image here.' %}" aria-describedby="basic-addon2">
+
+                <!-- Submit button -->
+
+                <div class="input-group-append">
+                    <button class="btn btn-secondary" type="submit" value="Submit" data-toggle="tooltip-top" title="{% trans 'Add the image' %}">
+                        ＋
+                    </button>
+                </div>
+
+            </div>
+        </form>
+
+        <br/>
+        <br/>
+
+        <!-- Embedded Where's Wally Twitter timeline -->
+
+        <div style="max-width: 100vm; max-width: 100vmin; margin: auto;">
+            {% get_current_language as LANGUAGE_CODE %}
+            <a class="twitter-timeline" data-lang="{{ LANGUAGE_CODE }}" data-dnt="true" href="https://twitter.com/whereswally?ref_src=twsrc%5Etfw">
+                Tweets by whereswally
+            </a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+
+    </div>
+
+    <!-- Modal Style -->
+
+    <style>
+
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            padding-top: 5%; /* Location of the box */
+            padding-bottom: 5%;
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+        }
+
+        /* Modal Content (image) */
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 90%;
+            border-radius: 0;
+        }
+
+        /* Caption of Modal Image */
+        #caption,
+        #resultCaption,
+        #caption-here,
+        #caption-not-here {
+            margin: auto;
+            display: block;
+            width: calc(200% / 3);
+            text-align: center;
+            color: #ccc;
+            height: auto;
+            padding-bottom: 5%;
+        }
+
+        /* Add Animation */
+        #caption,
+        #resultCaption,
+        #caption-here,
+        #caption-not-here,
+        #resultModalInset,
+        #zoomImage {
+            -webkit-animation-name: zoom;
+            -webkit-animation-duration: 0.6s;
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+        @-webkit-keyframes zoom {
+            from {-webkit-transform:scale(0)}
+            to {-webkit-transform:scale(1)}
+        }
+        @keyframes zoom {
+            from {transform:scale(0)}
+            to {transform:scale(1)}
+        }
+
+        /* The Close Button */
+        .close {
+            position: absolute;
+            padding-top: calc(5% - 0.25em);
+            top: 0px;
+            padding-right: calc(5% - 0.25em);
+            right: 0px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* 100% Image Width on Smaller Screens */
+        @media only screen and (max-width: 700px){
+            .modal-content {
+                width: 100%;
+            }
+        }
+
+        /* Loader */
+        .loader-box {
+            position: absolute;
+            top: 0;
+            padding-top: 5%;
+            padding-left: 5%;
+            left: 0px;
+        }
+        .loader {
+            border: 0.25em solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 0.25em solid #3498db;
+            width: 1.5em;
+            height: 1.5em;
+            -webkit-animation: spin 1s linear infinite; /* Safari */
+            animation: spin 1s linear infinite;
+        }
+
+        /* Safari */
+        @-webkit-keyframes spin {
+            0% { -webkit-transform: rotate(0deg); }
+            100% { -webkit-transform: rotate(360deg); }
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+    </style>
+
+
+    <!-- Zoom Modal -->
+
+    <div id="zoomModal" class="modal">
+        <span class="close">
+            &times;
+        </span>
+        <div id="caption"></div>
+        <img class="modal-content" id="zoomImage"/>
+    </div>
+
+    <!-- Result Modal -->
+
+    <div id="resultModal" class="modal">
+        <span class="loader-box">
+            <div class='loader'></div>
+        </span>
+        <span class="close">
+            &times;
+        </span>
+        <div id="resultModalInset">
+            <div id="resultCaption"></div>
+            <img id="resultImage" class="modal-content"/>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block javascript %}
+    <script type="text/javascript">
+
+        //  Initialize image carousel indices
+
+        var slideTo = 0;
+        var slideFrom = 0;
+
+        //  All image URLs
+
+        var srcURL = [{% for image in images %}"{{ image|escapejs|safe }}"{% if not forloop.last %},{% endif %}{% endfor %}];
+
+        //  Initialize active image
+
+        var currentImage = document.getElementById(srcURL[slideTo]);
+
+        //  Get modal components
+
+        var zoomModal = document.getElementById("zoomModal");
+        var zoomImage = document.getElementById("zoomImage");
+        var zoomCaptionText = document.getElementById("caption");
+        var resultModal = document.getElementById("resultModal");
+        var resultImage = document.getElementById("resultImage");
+        var resultCaptionText = document.getElementById("resultCaption");
+        var zoom_close = document.getElementsByClassName("close")[0];
+        var result_close = document.getElementsByClassName("close")[1];
+
+        //  Define loading text
+
+        var loadingText = "{% trans 'This calculation may take around a minute. Can you find Wally before that?' %}";
+
+        //  Zoom in on active image when clicked
+
+        document.getElementById(srcURL[slideTo]).style.cursor = "zoom-in";
+        document.getElementById(srcURL[slideTo]).onclick = showZoomModal;
+
+        //  Function to update current image indices whenever active image changes
+
+        $(".carousel").on("slide.bs.carousel", function (e) {
+
+            //  Update indices
+
+            slideFrom = $(this).find(".active").index();
+            slideTo = $(e.relatedTarget).index();
+
+            //  Zoom in on active image when clicked
+
+            document.getElementById(srcURL[slideTo]).style.cursor = "zoom-in";
+            currentImage = document.getElementById(srcURL[slideTo]);
+            document.getElementById(srcURL[slideTo]).onclick = showZoomModal;
+
+        });
+
+        //  Function to zoom into active image
+
+        function showZoomModal() {
+            zoomImage.src = currentImage.src;
+            zoomCaptionText.innerHTML = "{% trans 'Here is a closer look. Try going back and clicking the <i>FIND WALLY</i> button.' %}";
+            zoomModal.style.display = "block";
+        };
+
+        //  Function to show the results of the prediction
+
+        function showResultModal() {
+
+            //  Hide the loader animation
+
+            document.getElementsByClassName("loader")[0].style.display = "none";
+
+            //  Initialize caption variables
+
+            var captionHere = document.getElementById("caption-here");
+            var captionNotHere = document.getElementById("caption-not-here");
+
+            //  Insert appropriate message if the element exists
+
+            if (captionHere){
+                captionHere.innerHTML = "{% trans 'Here&apos;s Wally!' %}";
+            }
+            else if (captionNotHere){
+                captionNotHere.innerHTML = "{% trans 'Perhaps Wally is not here...' %}";
+            }
+
+            resultModal.style.display = "block";
+        };
+
+        //  Hide the zoom modal if the close button is clicked
+
+        zoom_close.onclick = function() {
+            zoomModal.style.display = "none";
+        };
+
+        //  Hide the result modal if the close button is clicked
+
+        result_close.onclick = function() {
+            resultModal.style.display = "none";
+        };
+
+        //  Function to request a prediction for Wally's location and to show the result modal
+
+        function findWally() {
+
+            //  Initialize loader animation
+
+            document.getElementsByClassName("loader")[0].style.display = "block";
+
+            //  Initialize result modal variables
+
+            var resultCaptionText = document.getElementById("resultCaption");
+            var captionHere = document.getElementById("caption-here");
+            var captionNotHere = document.getElementById("caption-not-here");
+            var resultImage = document.getElementById("resultImage");
+
+            //  Depending on the available caption ID
+            //  ("resultCaption" initially;
+            //      "caption-here" if previous result showed Wally;
+            //      "caption-not-here" if previous result did not show Wally),
+            //  Display the standard loading text
+
+            if (resultCaptionText) {
+                resultCaptionText.innerHTML = loadingText;
+            }
+            else if (captionHere) {
+                captionHere.innerHTML = loadingText;
+            }
+            else if (captionNotHere) {
+                captionNotHere.innerHTML = loadingText;
+            }
+
+            //  Update the modal image to the active image for the user to see
+            //  to try finding Wally himself, and show the modal
+
+            resultImage.src = currentImage.src;
+            resultModal.style.display = "block";
+
+            //  Predicting step (occuring while user is searching, and the loader animation is running)
+
+            $.ajax({
+
+                //  Request the find_wally.html using the active image URL
+
+                url: "{% url 'find_wally' %}",
+                data: {
+                    "current_url": srcURL[slideTo]
+                },
+                dataType: "json",
+
+                success: function (data) {
+
+                    //  On success, update the resultModalInset with the solution response of an image and a caption div
+
+                    $("#resultModalInset").html(data);
+
+                    //  Show the results of the prediction
+
+                    showResultModal();
+                }
+
+            });
+
+        };
+    </script>
+{% endblock %}
