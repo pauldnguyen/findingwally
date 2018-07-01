@@ -1,0 +1,93 @@
+/* Jumbotron Canvas */
+.jumbotron {
+    background-color: white;
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+}
+
+/* Image Carousel */
+#carousel-main {
+    margin: auto;
+    max-height: calc(90vm * 8 / 9);  /* IE9 fallback */
+    max-width: 90vm;   /* IE9 fallback */
+    max-height: calc(90vmin * 8 / 9);
+    max-width: 90vmin;
+}
+
+/* Image Carousel Slides */
+#carousel-main .carousel-outer {
+    background-color: black;
+    position: relative;
+}
+#carousel-main .carousel-item-frame {
+    position: relative;
+    height: calc(90vm * (2 / 3));    /* IE9 fallback */
+    height: calc(90vmin * (2 / 3));
+}
+#carousel-main .carousel-item-frame img {
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+/* Image Carousel Indicators */
+#carousel-main .carousel-indicators {
+    background-color: rgb(64, 64, 64);
+    justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: static;
+    white-space: nowrap;
+    width: 100%;
+    margin: auto;
+}
+#carousel-main .carousel-indicators li {
+    float: left;
+    margin:0;
+    height: auto;
+    width: auto;
+}
+#carousel-main .carousel-indicators li  .carousel-indicators-border .carousel-indicators-frame img {
+    display: block;
+    max-height: 100%;
+    max-width: 100%;
+    opacity: 0.5;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+#carousel-main .carousel-indicators li:hover .carousel-indicators-border .carousel-indicators-frame img {
+    opacity: 0.75;
+}
+#carousel-main .carousel-indicators li.active .carousel-indicators-border .carousel-indicators-frame img {
+    opacity: 1;
+}
+#carousel-main .carousel-indicators-frame {
+    position: relative;
+    height: calc((90vm / 3 / 3 * 2) - 2vm);    /* IE9 fallback */
+    height: calc((90vmin / 3 / 3 * 2) - 2vmin);
+    width: calc((90vm / 3) - 2vm); /* IE9 fallback */
+    width: calc((90vmin / 3) - 2vmin);
+    margin: auto;
+    background-color: black;
+}
+#carousel-main .carousel-indicators-border {
+    background-color: rgb(64, 64, 64);
+    padding: 1vm;   /* IE9 fallback */
+    padding: 1vmin;
+}
+
+/* Image Carousel Controlers */
+#carousel-main .carousel-control-prev:hover,
+#carousel-main .carousel-control-next:hover {
+    background-color: rgba(0, 0, 0, 0.75);
+}
