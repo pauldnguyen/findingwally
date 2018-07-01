@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load static %}
+
+{% block content %}
+
+    <br/>
+
+    <!-- Canvas to contain the body content -->
+
+    <div class="jumbotron">
+
+        <!-- Header -->
+
+        <h1 class="display-4" style="text-align: left;">
+            {% trans "Hello, World!" %}
+        </h1>
+        <br/>
+        <br/>
+
+        <!-- Information -->
+
+        <p class="lead">
+            <img src="{% static 'img/Wally_full.jpg' %}" alt="Wally" style="float: right; max-height: 27.25em; max-width: calc(50% + 2rem); padding-left: 2rem;"/>
+            {% trans "Thanks for visiting and trying my little Web application! I hope you liked it." %}
+            <br/>
+            <br/>
+            {% trans "After seeing the capabilities of machine learning in this example, you may be curious about how it works, and want to learn more. The specific model used in this application is called a convolutional neural network. This type of artificial neural network is commonly used for analysis on images, but it can also be used in other situations." %}
+            <br/>
+            <br/>
+            {% trans "The following 15-minute video from Michael Pound at the University of Nottingham may be a good place to start exploring the topic. It also points to other simple videos if you are still curious or confused." %}
+            <br/>
+            <br/>
+        </p>
+
+        <!-- Embedded convolutional neural network Youtube video -->
+
+        <div style="width: calc(100vm - 4rem); height: calc((100vm - 4rem) * 9 / 16); width: calc(100vmin - 4rem); height: calc((100vmin - 4rem) * 9 / 16); max-width: 100%;">
+            {% get_current_language as LANGUAGE_CODE %}
+            <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/py5byOOHZM8?&hl={{ LANGUAGE_CODE }}&cc_lang_pref={{ LANGUAGE_CODE }}&cc_load_policy=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+            </iframe>
+        </div>
+
+        <!-- More information -->
+
+        <p class="lead">
+            <br/>
+            <br/>
+            {% trans "This Web application uses the open-source API TensorFlow Object Detection developed by Google Brain for its calculations. TensorFlow is a powerful tool you can use to implement machine learning techniques without building everything from scratch. If you want to learn how the different components of a neural network interact, visit the awesome TensorFlow Playground, and play with all the parameters of a network to see how it affects predictions. Take a look at it " %}<a href="https://playground.tensorflow.org/" style="text-decoration: none;" target="_blank">{% trans "here" %}</a>{% trans "." %}
+            <br/>
+            <br/>
+            {% trans "I assembled this Web application by adapting the model produced by the work of Tadej Magajna. That model itself is an adaptation of the Faster-RCNN-Inception-V2 model retrained on images of Wally. Take a look at his work " %}<a href="https://towardsdatascience.com/how-to-find-wally-neural-network-eddbb20b0b90" style="text-decoration: none;" target="_blank">{% trans "here" %}</a>{% trans "." %}
+            <br/>
+            <br/>
+            {% trans "If you are interested, I uploaded some of the important files for this project on my GitHub page " %}<a href="https://github.com/pauldnguyen/findingwally" style="text-decoration: none;" target="_blank">{% trans "here" %}</a>{% trans ". " %}
+            <br/>
+            <br/>
+            {% trans "Take care," %}
+            <br/>
+            <br/>
+            Paul
+        </p>
+
+    </div>
+
+{% endblock %}
+
+{% block javascript %}
+{% endblock %}
