@@ -14,7 +14,7 @@ The images, annotations, model checkpoint, and trained model from [Tadej Magajna
 
 [TensorFlow Object Detection API](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/installation.md) and its dependencies for both training and prediction
 
-N.B. It does seem however, that the API has been misfunctioning for some time now (cf. https://github.com/tensorflow/models/issues/2952). In which case, the frozen_inference_graph.py file from Tadej Magajna can be your starting substitute, as I have in the online implementation of the Web app.
+N.B. It does seem however, that the API has been malfunctioning for some time now, where it appears to be training (in this case, a transfer learning from a pretrained model, with progressively decreasing losses), but in reality training through the Object Detection API incurs a deleterious effect on the parameters of the model (cf. https://github.com/tensorflow/models/issues/2952). In which case, the frozen_inference_graph.py file from Tadej Magajna can be an initial substitute, as I have in the online implementation of the Web app.
 
 To generate detection plots:
 
