@@ -10,7 +10,7 @@ Python 3.5+, JavaScript, HTML, CSS
 
 # Requirements
 
-The images, annotations, model checkpoint, and trained model from [Tadej Magajna](https://github.com/tadejmagajna/HereIsWally); or alternatively, create separate similar images, annotations, to retrained the model derived from his checkpoint, or to trained a model from scratch. For simply implementing a Web application to predict Wally's location (and not training a new model), only a frozen inference graph (the trained model) is needed, and found on his repository.
+The images, annotations, model checkpoint, and trained model from [Tadej Magajna](https://github.com/tadejmagajna/HereIsWally); or alternatively, create separate similar images, annotations, to retrained the model derived from his checkpoint, or to trained a model from scratch. For simply implementing a Web application to predict Wally's location (and not training a new model), only a frozen inference graph (the trained model) is needed, and found on his repository. His images and annotations come from [Valentino Constantinou](https://github.com/vc1492a/Hey-Waldo).
 
 [TensorFlow Object Detection API](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/installation.md) and its dependencies for both training and prediction; TensorFlow 1.3+. Read Tadej's post about his work to get started [here](https://towardsdatascience.com/how-to-find-wally-neural-network-eddbb20b0b90). A similar explination on the use of TensorFlow's Object Detection API by Dat Tran can be found [here](https://towardsdatascience.com/how-to-train-your-own-object-detector-with-tensorflows-object-detector-api-bec72ecfe1d9).
 
