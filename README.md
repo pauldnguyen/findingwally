@@ -14,7 +14,7 @@ The images, annotations, model checkpoint, and trained model from [Tadej Magajna
 
 [TensorFlow Object Detection API](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/installation.md) and its dependencies for both training and prediction; TensorFlow 1.3+. Read Tadej's post about his work to get started [here](https://towardsdatascience.com/how-to-find-wally-neural-network-eddbb20b0b90). A similar explination on the use of TensorFlow's Object Detection API by Dat Tran can be found [here](https://towardsdatascience.com/how-to-train-your-own-object-detector-with-tensorflows-object-detector-api-bec72ecfe1d9).
 
-N.B. It does seem however, that the API has been malfunctioning for some time now, where it appears to be training (in this case, a transfer learning from a pretrained model, with progressively decreasing losses), but in reality training through the Object Detection API incurs a deleterious effect on the parameters of the model (cf. https://github.com/tensorflow/models/issues/2952). In which case, the frozen_inference_graph.py file from Tadej Magajna can be an initial substitute to get you started assembling a similar Web app.
+N.B. It does seem however, that the API has been malfunctioning for some time now, where it appears to be training (in this case, a transfer learning from a pretrained model, with progressively decreasing losses), but in reality training through the Object Detection API incurs a deleterious effect on the parameters of the model (cf. the issue as described here https://github.com/tensorflow/models/issues/2952). In which case, the frozen_inference_graph.py file from Tadej Magajna can be an initial substitute to get you started assembling a similar Web app.
 
 To generate detection plots:
 
