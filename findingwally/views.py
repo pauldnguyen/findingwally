@@ -139,6 +139,14 @@ def go_find_wally(working_graph, url):
 
 #   View functions for the different Webpages on Finding Wally
 
+def error_500(request):
+    '''
+    This function renders a custom 500 error page telling the user about the
+    limitations of the free PythonAnywhere site.
+    '''
+    data = {}
+    return render(request, "error_500.html", data)
+
 def more_information(request):
     '''
     This function renders a request for the More Information page.
