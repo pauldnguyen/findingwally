@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load static %}
+
+{% block content %}
+
+    <br/>
+
+    <!-- Canvas to contain the body content -->
+
+    <div class="jumbotron">
+
+        <!-- Header -->
+
+        <h1 class="display-4" style="text-align: left;">
+            {% trans "Error 500" %}
+        </h1>
+        <br/>
+        <br/>
+
+        <!-- Information -->
+
+        <p class="lead">
+            {% trans "There is a server error. Perhaps you submitted an image address that is not compatible with the free PythonAnywhere account that hosts this Website. Please try again; images from Twitter do not cause this error." %}
+        </p>
+
+    </div>
+
+{% endblock %}
+
+{% block javascript %}
+{% endblock %}
