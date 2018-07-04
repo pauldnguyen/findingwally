@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path, re_path
+from django.conf.urls import handler500
 
 urlpatterns = [
     re_path(r'^admin/', admin.site.urls),
@@ -28,6 +29,8 @@ urlpatterns += [
     re_path(r'^more_information/$', findingwally_views.more_information, name='more_information'),
     re_path(r'^ajax/find_wally/$', findingwally_views.find_wally, name='find_wally'),
 ]
+
+handler500 = findingwally_views.error_500
 
 from django.conf import settings
 from django.conf.urls.static import static
