@@ -1,0 +1,265 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-07-04 18:10+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: templates/base.html:9
+msgid "Finding Wally"
+msgstr "Walter finden"
+
+#: templates/base.html:26
+msgid "FINDING WALLY"
+msgstr "WALTER FINDEN"
+
+#: templates/base.html:38
+msgid "More Information"
+msgstr "Mehr Information"
+
+#: templates/base.html:58
+msgid "Languages"
+msgstr "Sprachen"
+
+#: templates/error_500.html:17
+msgid "Error 500"
+msgstr "Fehler 500"
+
+#: templates/error_500.html:25
+msgid ""
+"There is a server error. Perhaps you submitted an image address that is not "
+"compatible with the free PythonAnywhere account that hosts this Website. "
+"Please try again; images from Twitter do not cause this error."
+msgstr ""
+"Es gibt ein Serverfehler. Vielleicht habt ihr eine Bildadresse eingereicht, "
+"die nicht mit dem kostenlosen PythonAnywhere-Konto kompatibel ist, das diese "
+"Webseite hostet. Bitte versucht es erneut; Bilder von Twitter verursachen "
+"diesen Fehler nicht."
+
+#: templates/home.html:17
+msgid "Where's Wally?"
+msgstr "Wo ist Walter?"
+
+#: templates/home.html:26
+msgid ""
+"Wally has gone out in search of adventure again! Perhaps you have heard of "
+"him from his famous series of books <i>Where's Wally?</i> full of his many "
+"pictures from various exotic times and places. As usual, he likes to hide "
+"somewhere at each location so that his friends can have fun looking for him."
+msgstr ""
+"Walter ist wieder auf Abenteuer ausgegangen! Vielleicht habet ihr von seiner "
+"berühmten Buchreihe <i>Wo ist Walter?</i> voller seiner vielen Bilder aus "
+"verschiedenen exotischen Zeiten und Orten von ihm gehört. Wie gewöhnlich "
+"versteckt er sich gerne irgendwo an jedem Ort, sodass seine Freunde Spaß "
+"haben können, nach ihm zu suchen."
+
+#: templates/home.html:29
+msgid ""
+"That search for him is now easier than ever before with this new tool that "
+"detects him using a powerful technique from machine learning: the artificial "
+"neural network. This system is made up of a collection of connected units "
+"called artificial neurons, which are reminiscent of neurons in a brain. "
+"These artificial neurons process the data, and transfer them to the next "
+"neurons until the data reaches an output node indicating a decision. To "
+"calibrate the connections between neurons, the network trains itself by "
+"taking appropriate data through the network, and adjusting the connections "
+"to reduce errors in the final predictions. After it learns Wally's different "
+"features from images with him and those without him, this model is able to "
+"detect his location in new images."
+msgstr ""
+"Die Suche nach ihm ist jetzt einfacher als je zuvor mit diesem neuen "
+"Werkzeug, das ihn mit einer leistungsfähigen Technik des maschinellen "
+"Lernens erkennt: das künstliche neurale Netzwerk. Dieses System besteht aus "
+"einer Sammlung von verbundenen Einheiten, den künstlichen Neuronen, die an "
+"die Neuronen in einem Gehirn erinnern. Diese künstlichen Neuronen "
+"verarbeiten die Daten und übertragen sie an die nächsten Neuronen, bis die "
+"Daten einen Ausgangsknoten erreichen, der eine Entscheidung anzeigt. Um die "
+"Verbindungen zwischen Neuronen zu kalibrieren, trainiert das Netzwerk sich "
+"selbst, indem es geeignete Daten durch das Netzwerk nimmt und die "
+"Verbindungen einstellt, um Fehler in den endgültigen Vorhersagen zu "
+"reduzieren. Nachdem es Walters unterschiedliche Merkmale aus Bildern mit ihm "
+"und denen ohne ihn gelernt hat, kann dieses Modell seinen Standort in neuen "
+"Bildern erkennen."
+
+#: templates/home.html:32
+msgid ""
+"Give it a try now: look through the collection of images below, and select "
+"one to start finding Wally! If you do not see any images, try opening the "
+"website in another browser."
+msgstr ""
+"Probiert es jetzt aus: sucht die Sammlung von Bildern unten durch und wählt "
+"ein aus, um Walter zu finden! Wenn ihr keine Bilder seht, versucht die "
+"Webseite in einem anderen Browser zu öffnen."
+
+#: templates/home.html:49 templates/home.html:55
+msgid "If no images appear, try opening the website in another browser."
+msgstr ""
+"Wenn keine Bilder erscheinen, versucht die Website in einem anderen Browser "
+"zu öffnen."
+
+#: templates/home.html:105
+msgid "FIND WALLY"
+msgstr "WALTER FINDEN"
+
+#: templates/home.html:106
+msgid "Find Wally in the image"
+msgstr "Walter im Bild finden"
+
+#: templates/home.html:117
+msgid ""
+"Once you have selected an image from the collection, click on the button "
+"above to find Wally. You can also add more images from the Internet by "
+"typing its address in the box below and clicking the button on the side. "
+"Afterwards, you can select that image just like any of the others in the "
+"collection to find Wally. Because of the restrictions of using a free "
+"account with the PythonAnywhere web-hosting service, you can only add "
+"certain external sources such as Twitter. You may find some good new images "
+"to try from Wally's Twitter below."
+msgstr ""
+"Sobald ihr ein Bild aus der Sammlung ausgewählt habt, klickt auf die "
+"Schaltfläche oben, um Walter zu finden. Ihr könnt auch weitere Bilder aus "
+"dem Internet hinzufügen, indem ihr die Adresse in das Feld unten eingebt und "
+"auf die Schaltfläche auf der Seite klickt. Danach könnt ihr dieses Bild "
+"genau wie alle anderen in der Sammlung auswählen, um Walter zu finden. "
+"Aufgrund der Einschränkungen bei der Verwendung eines kostenlosen Kontos "
+"beim PythonAnywhere-Webhostingdienst könnt ihr nur bestimmte externe Quellen "
+"wie Twitter hinzufügen. Ihr könnt unten einige gute neue Bilder von Walters "
+"Twitter-Seite finden, um zu versuchen."
+
+#: templates/home.html:130
+msgid "Enter the web address of an image here."
+msgstr "Gebt hier die Webadresse eines Bildes ein."
+
+#: templates/home.html:135
+msgid "Add the image"
+msgstr "Das Bild hinzufügen"
+
+#: templates/home.html:333
+msgid ""
+"This calculation may take around a minute. Can you find Wally before that?"
+msgstr ""
+"Diese Berechnung kann etwa eine Minute dauern. Könnt ihr Walter vorher "
+"finden?"
+
+#: templates/home.html:361
+msgid ""
+"Here is a closer look. Try going back and clicking the <i>FIND WALLY</i> "
+"button."
+msgstr ""
+"Hier ist ein genauerer Blick. Versucht zurückzugehen und auf die "
+"Schaltfläche <i>WALTER FINDEN</i> zu klicken."
+
+#: templates/home.html:381
+msgid "Here&apos;s Wally!"
+msgstr "Hier ist Walter!"
+
+#: templates/home.html:384
+msgid "Perhaps Wally is not here..."
+msgstr "Vielleicht ist Walter nicht hier..."
+
+#: templates/more_information.html:17
+msgid "Hello, World!"
+msgstr "Hallo Welt!"
+
+#: templates/more_information.html:26
+msgid ""
+"Thanks for visiting and trying my little Web application! I hope you liked "
+"it."
+msgstr ""
+"Danke für den Besuch und den Versuch meiner kleinen Web&shy;anwendung! Ich "
+"hoffe, sie hat euch gefallen."
+
+#: templates/more_information.html:29
+msgid ""
+"After seeing the capabilities of machine learning in this example, you may "
+"be curious about how it works, and want to learn more. The specific model "
+"used in this application is called a convolutional neural network. This type "
+"of artificial neural network is commonly used for analysis on images, but it "
+"can also be used in other situations."
+msgstr ""
+"Nachdem ihr in diesem Beispiel die Fähigkeiten des maschinellen Lernens "
+"kennengelernt habt, seid ihr vielleicht neugierig darauf, wie es "
+"funktioniert, und möchtet mehr erfahren. Das spezifische Modell, das in "
+"dieser Anwendung verwendet wird, wird als konvolutionelles neuronales "
+"Netzwerk bezeichnet. Diese Art von künstlichem neuralem Netzwerk wird "
+"üblicherweise für die Analyse von Bildern verwendet, kann aber auch in "
+"anderen Situationen verwendet werden."
+
+#: templates/more_information.html:32
+msgid ""
+"The following 15-minute video from Michael Pound at the University of "
+"Nottingham may be a good place to start exploring the topic. It also points "
+"to other simple videos if you are still curious or confused."
+msgstr ""
+"Das folgende 15-minütige Video von Michael Pound an der Universität "
+"Nottingham könnte ein guter Ausgangspunkt für die Erkundung des Themas sein. "
+"Es zeigt auch auf andere einfache Videos, wenn ihr noch neugierig oder "
+"verwirrt seid."
+
+#: templates/more_information.html:50
+msgid ""
+"This Web application uses the open-source API TensorFlow Object Detection "
+"developed by Google Brain for its calculations. TensorFlow is a powerful "
+"tool you can use to implement machine learning techniques without building "
+"everything from scratch. If you want to learn how the different components "
+"of a neural network interact, visit the awesome TensorFlow Playground, and "
+"play with all the parameters of a network to see how it affects predictions. "
+"Take a look at it "
+msgstr ""
+"Diese Webanwendung verwendet für ihre Berechnungen die Open-Source-API "
+"TensorFlow Object Detection, die von Google Brain entwickelt wurde. "
+"TensorFlow ist ein leistungsfähiges Werkzeug, mit dem man maschinelle "
+"Lerntechniken implementieren kann, ohne alles von Grund auf neu zu bauen. "
+"Wenn ihr lernen möchtet, wie die verschiedenen Komponenten eines neuronalen "
+"Netzwerks interagieren, besucht den fantastischen TensorFlow Playground und "
+"spielt mit allen Parametern eines Netzwerks, um zu sehen, wie sich das auf "
+"Vorhersagen auswirkt. Schaut es euch "
+
+#: templates/more_information.html:50 templates/more_information.html:53
+#: templates/more_information.html:56
+msgid "here"
+msgstr "hier"
+
+#: templates/more_information.html:50 templates/more_information.html:53
+msgid "."
+msgstr " an."
+
+#: templates/more_information.html:53
+msgid ""
+"I assembled this Web application by adapting the model produced by the work "
+"of Tadej Magajna. That model itself is an adaptation of the Faster-RCNN-"
+"Inception-V2 model retrained on images of Wally. Take a look at his work "
+msgstr ""
+"Ich habe diese Webanwendung zusammengestellt, indem ich das Modell aus der "
+"Arbeit von Tadej Magajna angepasst habe. Dieses Modell selbst ist eine "
+"Adaption des Faster-RCNN-Inception-V2-Modells, das auf Bildern von Walter "
+"neu trainiert wurde. Seht euch seine Arbeit "
+
+#: templates/more_information.html:56
+msgid ""
+"If you are interested, I uploaded some of the important files for this "
+"project on my GitHub page "
+msgstr ""
+"Wenn ihr interessiert seid, habe ich einige wichtige Dateien für dieses "
+"Projekt auf meiner GitHub-Seite "
+
+#: templates/more_information.html:56
+msgid ". "
+msgstr " hochgeladen."
+
+#: templates/more_information.html:59
+msgid "Take care,"
+msgstr "Macht's gut"
