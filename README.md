@@ -22,6 +22,8 @@ To generate detection plots:
 
 [NumPy](https://github.com/numpy/numpy)
 
+PIL
+
 Backend framework:
 
 [Django](https://github.com/django/django)
