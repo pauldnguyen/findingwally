@@ -28,6 +28,8 @@ Backend framework:
 
 [Django](https://github.com/django/django)
 
+A web hosting service; I used PythonAnywhere.com, and followed its provided procedures to set up the website. 
+
 Frontend:
 
 Bootstrap, provided in this repository as a min file
