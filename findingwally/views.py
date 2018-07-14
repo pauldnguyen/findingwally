@@ -190,6 +190,7 @@ def find_wally(request):
     '''
 
     #   Location of image and neural network
+    #   IMPORTANT: locations to load the relevant image, and the neural network to examine the image for Wally
     image_url = request.GET.get("current_url")
     model_path = "/home/findingwally/mysite/findingwally/trained_model/frozen_inference_graph.pb"
 
