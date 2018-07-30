@@ -2,6 +2,8 @@
 
 Finding Wally Web Application
 
+URL: http://findingwally.pythonanywhere.com
+
 A facial-recognition (image detection) web-application using a convolutional neural network to solve puzzles from the children’s picture-book series Where’s Wally.
 
 An adaption of the work done by [Tadej Magajna](https://github.com/tadejmagajna/HereIsWally) as a web application on the PythonAnywhere webhosting service.
