@@ -20,7 +20,7 @@ The images, annotations, model checkpoint, and trained model from [Tadej Magajna
 
 N.B. It does seem however, that the API has been malfunctioning for some time now. It appears to be training (in this case, a transfer learning from a pretrained model, with progressively decreasing losses as expected), but in reality, training through the Object Detection API incurs a deleterious effect on the parameters of the model (cf. the issue as described here https://github.com/tensorflow/models/issues/2952). In which case, the frozen_inference_graph.py file from Tadej Magajna can be an initial substitute to get you started assembling a similar Web app.
 
-UPDATE: It appears as of August 1, 2018, a solution to the above issue has appeared whereby the phrase "load_all_detection_checkpoint_vars: true" is inserted into the training configuration file to copy all of the saved variables. (cf. the issue as described here https://github.com/tensorflow/models/issues/4944).
+UPDATE: It seems that as of August 1, 2018, a solution to the above issue has appeared whereby the phrase "load_all_detection_checkpoint_vars: true" is inserted into the training configuration file to copy all of the saved variables. (cf. the issue as described here https://github.com/tensorflow/models/issues/4944).
 
 To generate detection plots:
 
